@@ -9,13 +9,18 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-serif: "Bellefair", serif;
   --font-sans: "Barlow Condensed", sans-serif;
+  --font-serif: "Bellefair", serif;
 
   --color-white: hsl(0, 0%, 100%);
-  --color-white-200: hsl(231.22, 77.36%, 89.61%);
+  --color-white-200: hsl(231, 77%, 90%);
+  --color-white-300: hsl(255, 255%, 255%);
 
   --color-black: hsl(0, 0%, 0%);
+  --color-black-100: hsl(230, 35%, 7%);
+
+  --breakpoint-sm: 36rem;
+  --breakpoint-lg: 56rem;
 }
 
 @theme inline {
