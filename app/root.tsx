@@ -29,6 +29,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  // applies to all routes
   return <Outlet />
 }
 
