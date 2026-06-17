@@ -5,6 +5,7 @@ import {
   Scripts,
   ScrollRestoration,
   isRouteErrorResponse,
+  useLocation,
 } from "react-router"
 
 import {
@@ -45,6 +46,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 // applies to all routes
 export default function App() {
+  const location = useLocation()
+
   const navItems = [
     { id: "00", label: "Home", href: "/" },
     { id: "01", label: "Destination", href: "/destination" },
@@ -121,78 +124,84 @@ export default function App() {
     )
   }
 
+  const pathname = location.pathname
+
+  const backgroundClass = pathname === "/" ? "bg-home" : ""
+
   return (
     <>
-      <header className="mx-8 mt-8 flex items-center justify-between sm:max-lg:mt-0 sm:max-lg:mr-0 lg:mr-0 lg:gap-4">
-        <svg
-          className="mr-10 w-14"
-          xmlns="http://www.w3.org/2000/svg"
-          width="48"
-          height="48"
-        >
-          <g fill="none" fill-rule="evenodd">
-            <circle cx="24" cy="24" r="24" fill="#FFF" />
-            <path
-              fill="#0B0D17"
-              d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"
-            />
-          </g>
-        </svg>
+      <div className={`min-h-screen ${backgroundClass}`}>
+        <header className="mx-8 flex items-center justify-between pt-8 sm:max-lg:mt-0 sm:max-lg:mr-0 lg:mr-0 lg:gap-4">
+          <svg
+            className="mr-10 w-14"
+            xmlns="http://www.w3.org/2000/svg"
+            width="48"
+            height="48"
+          >
+            <g fill="none" fillRule="evenodd">
+              <circle cx="24" cy="24" r="24" fill="#FFF" />
+              <path
+                fill="#0B0D17"
+                d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"
+              />
+            </g>
+          </svg>
 
-        {/* Desktop nav */}
-        <div className="hidden sm:flex lg:w-full lg:items-center lg:before:z-10 lg:before:-mr-8 lg:before:h-px lg:before:w-full lg:before:bg-white/20 lg:before:content-['']">
-          <nav>
-            <DesktopNav />
-          </nav>
-        </div>
+          {/* Desktop nav */}
+          <div className="hidden sm:flex lg:w-full lg:items-center lg:before:z-10 lg:before:-mr-8 lg:before:h-px lg:before:w-full lg:before:bg-white/20 lg:before:content-['']">
+            <nav>
+              <DesktopNav />
+            </nav>
+          </div>
 
-        {/* Mobile nav */}
-        <div className="sm:hidden">
-          <Sheet open={open} onOpenChange={setOpen}>
-            <div className="flex items-center">
-              <SheetTrigger asChild>
-                <button className="h-8 w-8">
-                  <span className="sr-only">Menu</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="21"
-                  >
-                    <g fill="#D0D6F9" fill-rule="evenodd">
-                      <path d="M0 0h24v3H0zM0 9h24v3H0zM0 18h24v3H0z" />
-                    </g>
-                  </svg>
-                </button>
-              </SheetTrigger>
-
-              <SheetContent
-                className="border-0 bg-white/5 pt-8 pr-0 pl-12 text-white backdrop-blur-2xl data-[side=bottom]:border-t-0 data-[side=left]:border-r-0 data-[side=right]:border-l-0 data-[side=top]:border-b-0"
-                showCloseButton={false}
-              >
-                <SheetClose asChild>
-                  <button className="mr-8 mb-8 ml-auto aspect-square p-4">
-                    <span className="sr-only">Close</span>
-
+          {/* Mobile nav */}
+          <div className="sm:hidden">
+            <Sheet open={open} onOpenChange={setOpen}>
+              <div className="flex items-center">
+                <SheetTrigger asChild>
+                  <button className="h-8 w-8">
+                    <span className="sr-only">Menu</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="20"
+                      width="24"
                       height="21"
                     >
-                      <g fill="#D0D6F9" fill-rule="evenodd">
-                        <path d="M2.575.954l16.97 16.97-2.12 2.122L.455 3.076z" />
-                        <path d="M.454 17.925L17.424.955l2.122 2.12-16.97 16.97z" />
+                      <g fill="#D0D6F9" fillRule="evenodd">
+                        <path d="M0 0h24v3H0zM0 9h24v3H0zM0 18h24v3H0z" />
                       </g>
                     </svg>
                   </button>
-                </SheetClose>
+                </SheetTrigger>
 
-                <MobileNav />
-              </SheetContent>
-            </div>
-          </Sheet>
-        </div>
-      </header>
-      <Outlet />
+                <SheetContent
+                  className="border-0 bg-white/5 pt-8 pr-0 pl-12 text-white backdrop-blur-2xl data-[side=bottom]:border-t-0 data-[side=left]:border-r-0 data-[side=right]:border-l-0 data-[side=top]:border-b-0"
+                  showCloseButton={false}
+                >
+                  <SheetClose asChild>
+                    <button className="mr-8 mb-8 ml-auto aspect-square p-4">
+                      <span className="sr-only">Close</span>
+
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="21"
+                      >
+                        <g fill="#D0D6F9" fillRule="evenodd">
+                          <path d="M2.575.954l16.97 16.97-2.12 2.122L.455 3.076z" />
+                          <path d="M.454 17.925L17.424.955l2.122 2.12-16.97 16.97z" />
+                        </g>
+                      </svg>
+                    </button>
+                  </SheetClose>
+
+                  <MobileNav />
+                </SheetContent>
+              </div>
+            </Sheet>
+          </div>
+        </header>
+        <Outlet />
+      </div>
     </>
   )
 }
