@@ -126,7 +126,12 @@ export default function App() {
 
   const pathname = location.pathname
 
-  const backgroundClass = pathname === "/" ? "bg-home" : ""
+  const backgroundClass =
+    pathname === "/"
+      ? "bg-home"
+      : pathname === "/destination"
+        ? "bg-destination"
+        : ""
 
   return (
     <>
