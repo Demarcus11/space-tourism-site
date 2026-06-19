@@ -1,7 +1,13 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "~/components/ui/carousel"
 import { Separator } from "~/components/ui/separator"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import data from "~/data.json"
 
@@ -9,11 +15,40 @@ export default function Destination() {
   const [selectedDestination, setSelectedDestination] = useState(
     data.destinations[0].name
   )
+  const [api, setApi] = useState<CarouselApi>()
 
-  // get object with the selected destination's name
+  // get the selected destination's object so we can gain access to name, image, description, etc
   const destination = data.destinations.find(
     (item) => item.name === selectedDestination
   )
+
+  // update the selected destination when the carousel is swiped
+  useEffect(() => {
+    if (!api) return
+
+    const onSelect = () => {
+      const index = api.selectedScrollSnap()
+
+      setSelectedDestination(data.destinations[index].name)
+    }
+
+    api.on("select", onSelect)
+
+    return () => {
+      api.off("select", onSelect)
+    }
+  }, [api])
+
+  // scroll the carousel when a tab is clicked
+  useEffect(() => {
+    if (!api) return
+
+    const index = data.destinations.findIndex(
+      (item) => item.name === selectedDestination
+    )
+
+    api.scrollTo(index)
+  }, [selectedDestination, api])
 
   return (
     <main className="content-grid content-grid--destination">
@@ -22,8 +57,30 @@ export default function Destination() {
         Destination
       </h1>
 
+      <div className="sm:hidden">
+        <Carousel
+          opts={{
+            align: "center",
+            loop: true,
+          }}
+          setApi={setApi}
+        >
+          <CarouselContent>
+            {data.destinations.map((item) => (
+              <CarouselItem key={item.name}>
+                <img
+                  className="mx-auto mb-12 max-w-[60%] sm:max-w-[50%] lg:max-w-[80%]"
+                  src={item?.images.png}
+                  alt={item?.name}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </div>
+
       <img
-        className="mb-12 max-w-[60%] sm:max-w-[50%] lg:max-w-[80%]"
+        className="mb-12 hidden max-w-[60%] sm:block sm:max-w-[50%] lg:max-w-[80%]"
         src={destination?.images.png}
         alt={destination?.name}
       />
