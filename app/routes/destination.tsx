@@ -83,6 +83,7 @@ export default function Destination() {
         className="mb-12 hidden max-w-[60%] sm:block sm:max-w-[50%] lg:max-w-[80%]"
         src={destination?.images.png}
         alt={destination?.name}
+        draggable={false}
       />
 
       <Tabs
