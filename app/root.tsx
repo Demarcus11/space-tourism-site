@@ -133,7 +133,9 @@ export default function App() {
         ? "bg-destination"
         : pathname === "/crew"
           ? "bg-crew"
-          : ""
+          : pathname === "/technology"
+            ? "bg-technology"
+            : ""
 
   return (
     <>
