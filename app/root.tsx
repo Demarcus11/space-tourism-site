@@ -131,7 +131,9 @@ export default function App() {
       ? "bg-home"
       : pathname === "/destination"
         ? "bg-destination"
-        : ""
+        : pathname === "/crew"
+          ? "bg-crew"
+          : ""
 
   return (
     <>
