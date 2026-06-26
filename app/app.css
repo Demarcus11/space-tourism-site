@@ -206,3 +206,137 @@
     background-image: url("assets/home/bg-home-desktop.png");
   }
 }
+
+/*================
+      Destination 
+ =================
+*/
+.content-grid--destination {
+  margin-block-start: 2rem;
+
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs";
+
+  & > h1 {
+    grid-area: title;
+  }
+  & > img {
+    grid-area: image;
+  }
+  & > .tabs {
+    grid-area: tabs;
+  }
+
+  @media (width >= 56rem) {
+    grid-template-areas:
+      ". title title ."
+      ". image  tabs .";
+  }
+}
+
+.bg-destination {
+  background-image: url("assets/destination/background-destination-mobile.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (36rem < width < 56rem) {
+    background-image: url("assets/destination/background-destination-tablet.jpg");
+  }
+  @media (width >= 56rem) {
+    background-image: url("assets/destination/background-destination-desktop.jpg");
+  }
+}
+
+/*================
+      Crew
+ =================
+*/
+.content-grid--crew {
+  margin-block-start: 2rem;
+
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs";
+
+  & > h1 {
+    grid-area: title;
+  }
+  & > .image {
+    grid-area: image;
+  }
+  & > .tabs {
+    grid-area: tabs;
+  }
+
+  @media (width >= 56rem) {
+    grid-template-areas:
+      ". title title ."
+      ". tabs  image .";
+
+    padding-block-end: 0;
+  }
+}
+
+.bg-crew {
+  background-image: url("assets/crew/background-crew-mobile.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (36rem < width < 56rem) {
+    background-image: url("assets/crew/background-crew-tablet.jpg");
+  }
+  @media (width >= 56rem) {
+    background-image: url("assets/crew/background-crew-desktop.jpg");
+  }
+}
+
+/*================
+      Technology
+ =================
+*/
+.content-grid--technology {
+  margin-block-start: 2rem;
+
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs";
+  padding-inline: 0;
+
+  & > h1 {
+    grid-area: title;
+  }
+  & > .image {
+    grid-area: image;
+  }
+  & > .tabs {
+    grid-area: tabs;
+  }
+
+  @media (width >= 56rem) {
+    grid-template-areas:
+      ". title title ."
+      ". tabs  image image";
+
+    padding-block-end: 6rem;
+  }
+}
+
+.bg-technology {
+  background-image: url("assets/technology/background-technology-mobile.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (36rem < width < 56rem) {
+    background-image: url("assets/technology/background-technology-tablet.jpg");
+  }
+  @media (width >= 56rem) {
+    background-image: url("assets/technology/background-technology-desktop.jpg");
+  }
+}

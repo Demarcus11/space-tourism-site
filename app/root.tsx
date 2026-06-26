@@ -126,7 +126,16 @@ export default function App() {
 
   const pathname = location.pathname
 
-  const backgroundClass = pathname === "/" ? "bg-home" : ""
+  const backgroundClass =
+    pathname === "/"
+      ? "bg-home"
+      : pathname === "/destination"
+        ? "bg-destination"
+        : pathname === "/crew"
+          ? "bg-crew"
+          : pathname === "/technology"
+            ? "bg-technology"
+            : ""
 
   return (
     <>
@@ -177,6 +186,8 @@ export default function App() {
                   className="border-0 bg-white/5 pt-8 pr-0 pl-12 text-white backdrop-blur-2xl data-[side=bottom]:border-t-0 data-[side=left]:border-r-0 data-[side=right]:border-l-0 data-[side=top]:border-b-0"
                   showCloseButton={false}
                 >
+                  <SheetTitle className="sr-only" />
+                  <SheetDescription className="sr-only" />
                   <SheetClose asChild>
                     <button className="mr-8 mb-8 ml-auto aspect-square p-4">
                       <span className="sr-only">Close</span>
