@@ -151,7 +151,7 @@ export default function App() {
           <Sheet open={open} onOpenChange={setOpen}>
             <div className="flex items-center">
               <SheetTrigger asChild>
-                <button className="h-8 w-8">
+                <button className="h-8 w-8 hover:opacity-50">
                   <span className="sr-only">Menu</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -172,7 +172,7 @@ export default function App() {
                 <SheetTitle className="sr-only" />
                 <SheetDescription className="sr-only" />
                 <SheetClose asChild>
-                  <button className="mr-8 mb-8 ml-auto aspect-square p-4">
+                  <button className="mr-8 mb-8 ml-auto aspect-square p-4 hover:opacity-50">
                     <span className="sr-only">Close</span>
 
                     <svg
