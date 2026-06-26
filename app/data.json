@@ -3,8 +3,8 @@
     {
       "name": "Moon",
       "images": {
-        "png": "/app/assets/destination/image-moon.png",
-        "webp": "/app/assets/destination/image-moon.webp"
+        "png": "/assets/destination/image-moon.png",
+        "webp": "/assets/destination/image-moon.webp"
       },
       "description": "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
       "distance": "384,400 km",
@@ -13,8 +13,8 @@
     {
       "name": "Mars",
       "images": {
-        "png": "/app/assets/destination/image-mars.png",
-        "webp": "/app/assets/destination/image-mars.webp"
+        "png": "/assets/destination/image-mars.png",
+        "webp": "/assets/destination/image-mars.webp"
       },
       "description": "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!",
       "distance": "225 mil. km",
@@ -23,8 +23,8 @@
     {
       "name": "Europa",
       "images": {
-        "png": "/app/assets/destination/image-europa.png",
-        "webp": "/app/assets/destination/image-europa.webp"
+        "png": "/assets/destination/image-europa.png",
+        "webp": "/assets/destination/image-europa.webp"
       },
       "description": "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.",
       "distance": "628 mil. km",
@@ -33,8 +33,8 @@
     {
       "name": "Titan",
       "images": {
-        "png": "/app/assets/destination/image-titan.png",
-        "webp": "/app/assets/destination/image-titan.webp"
+        "png": "/assets/destination/image-titan.png",
+        "webp": "/assets/destination/image-titan.webp"
       },
       "description": "The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.",
       "distance": "1.6 bil. km",
@@ -45,7 +45,7 @@
     {
       "name": "Reid Wiseman",
       "images": {
-        "png": "/app/assets/crew/image-reid-wiseman.png"
+        "png": "/assets/crew/image-reid-wiseman.png"
       },
       "role": "Commander",
       "bio": "Reid Wiseman is a NASA astronaut and former U.S. Navy aviator. He was selected to command Artemis II, the first crewed mission of NASA's Artemis program, which will orbit the Moon and test systems for future lunar landings."
@@ -53,8 +53,8 @@
     {
       "name": "Victor Glover",
       "images": {
-        "png": "/app/assets/crew/image-victor-glover.png",
-        "webp": "/app/assets/crew/image-victor-glover.webp"
+        "png": "/assets/crew/image-victor-glover.png",
+        "webp": "/assets/crew/image-victor-glover.webp"
       },
       "role": "Pilot",
       "bio": "Victor Glover is a NASA astronaut and U.S. Navy aviator. He will serve as pilot of Artemis II, becoming the first Black astronaut to travel to the Moon on a lunar mission."
@@ -62,8 +62,8 @@
     {
       "name": "Christina Koch",
       "images": {
-        "png": "/app/assets/crew/image-christina-koch.png",
-        "webp": "/app/assets/crew/image-christina-koch.webp"
+        "png": "/assets/crew/image-christina-koch.png",
+        "webp": "/assets/crew/image-christina-koch.webp"
       },
       "role": "Mission Specialist",
       "bio": "Christina Koch is a NASA astronaut and electrical engineer who holds the record for the longest single spaceflight by a woman. She will serve as a mission specialist on Artemis II."
@@ -71,8 +71,8 @@
     {
       "name": "Jeremy Hansen",
       "images": {
-        "png": "/app/assets/crew/image-jeremy-hansen.png",
-        "webp": "/app/assets/crew/image-jeremy-hansen.webp"
+        "png": "/assets/crew/image-jeremy-hansen.png",
+        "webp": "/assets/crew/image-jeremy-hansen.webp"
       },
       "role": "Mission Specialist",
       "bio": "Jeremy Hansen is a Canadian Space Agency astronaut and former fighter pilot. He will become the first Canadian to travel beyond low Earth orbit as part of the Artemis II mission."
@@ -82,24 +82,24 @@
     {
       "name": "Launch vehicle",
       "images": {
-        "portrait": "/app/assets/technology/image-launch-vehicle-portrait.jpg",
-        "landscape": "/app/assets/technology/image-launch-vehicle-landscape.jpg"
+        "portrait": "/assets/technology/image-launch-vehicle-portrait.jpg",
+        "landscape": "/assets/technology/image-launch-vehicle-landscape.jpg"
       },
       "description": "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!"
     },
     {
       "name": "Spaceport",
       "images": {
-        "portrait": "/app/assets/technology/image-spaceport-portrait.jpg",
-        "landscape": "/app/assets/technology/image-spaceport-landscape.jpg"
+        "portrait": "/assets/technology/image-spaceport-portrait.jpg",
+        "landscape": "/assets/technology/image-spaceport-landscape.jpg"
       },
       "description": "A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch."
     },
     {
       "name": "Space capsule",
       "images": {
-        "portrait": "/app/assets/technology/image-space-capsule-portrait.jpg",
-        "landscape": "/app/assets/technology/image-space-capsule-landscape.jpg"
+        "portrait": "/assets/technology/image-space-capsule-portrait.jpg",
+        "landscape": "/assets/technology/image-space-capsule-landscape.jpg"
       },
       "description": "A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained."
     }
