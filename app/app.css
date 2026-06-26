@@ -321,9 +321,9 @@
   @media (width >= 56rem) {
     grid-template-areas:
       ". title title ."
-      ". tabs  image .";
+      ". tabs  image image";
 
-    padding-block-end: 0;
+    padding-block-end: 6rem;
   }
 }
 

@@ -18,9 +18,11 @@ export default function Technology() {
   const [api, setApi] = useState<CarouselApi>()
 
   // get the selected destination's object so we can gain access to name, image, bio, etc
-  const technology = data.crew.find((item) => item.name === selectedTechnology)
+  const technology = data.technology.find(
+    (item) => item.name === selectedTechnology
+  )
 
-  // update the selected crew member when the carousel is swiped
+  // update the selected technology when the carousel is swiped
   useEffect(() => {
     if (!api) return
 
@@ -50,7 +52,7 @@ export default function Technology() {
 
   return (
     <main className="content-grid content-grid--technology">
-      <h1 className="mt-8 text-xl font-light tracking-widest uppercase sm:justify-self-start">
+      <h1 className="mt-8 pl-8 text-xl font-light tracking-widest uppercase sm:justify-self-start">
         <span className="font-semibold text-gray-600">03</span> Space Launch 101
       </h1>
 
@@ -84,12 +86,12 @@ export default function Technology() {
           defaultValue={selectedTechnology}
           onValueChange={setSelectedTechnology}
           value={selectedTechnology}
-          className="my-12 flex gap-12 px-8 data-[orientation=horizontal]:flex-col-reverse lg:my-0 lg:h-96 lg:max-w-[65ch] lg:text-left lg:data-[orientation=horizontal]:flex-col"
+          className="my-12 flex gap-12 px-8 data-[orientation=horizontal]:flex-col-reverse lg:my-0 lg:h-96 lg:max-w-[85ch] lg:text-left lg:data-[orientation=horizontal]:flex-row-reverse"
         >
           {data.technology.map((item) => (
             <TabsContent value={item.name} key={item.name}>
-              <h2 className="mb-4 font-serif text-3xl text-white-200 uppercase lg:mb-8 lg:text-5xl lg:text-white">
-                <span className="mb-2 block text-xl text-gray-500 lg:mb-4 lg:text-3xl">
+              <h2 className="mb-4 font-serif text-3xl text-white-200 uppercase lg:mb-4 lg:text-5xl lg:text-white">
+                <span className="mb-2 block text-lg text-gray-500 lg:text-2xl">
                   The Terminology...
                 </span>
                 {item.name}
@@ -101,13 +103,13 @@ export default function Technology() {
             </TabsContent>
           ))}
 
-          {/* Dots */}
-          <TabsList className="mx-auto gap-6 bg-transparent group-data-horizontal/tabs:h-fit lg:mx-[revert]">
+          {/* Numbers */}
+          <TabsList className="mx-auto gap-6 bg-transparent group-data-horizontal/tabs:h-fit lg:mx-[revert] lg:flex-col">
             {data.technology.map((item, index) => (
               <TabsTrigger
                 key={item.name}
                 value={item.name}
-                className="aspect-square w-12 rounded-full text-white outline outline-white/30 transition-colors hover:bg-white/60 data-[state=active]:bg-white"
+                className="aspect-square w-12 rounded-full font-serif text-white outline outline-white/30 transition-colors hover:bg-white/60 data-[state=active]:bg-white lg:w-16 lg:text-xl"
               >
                 {index + 1}
               </TabsTrigger>
@@ -116,10 +118,18 @@ export default function Technology() {
         </Tabs>
       </div>
 
-      <div className="image relative mt-10 hidden h-160 w-140 max-lg:h-[revert] max-lg:w-[revert] max-lg:after:absolute max-lg:after:bottom-0 max-lg:after:block max-lg:after:h-0.5 max-lg:after:w-full max-lg:after:bg-gray-600 max-lg:after:content-[''] sm:block lg:my-0">
+      <div className="image mt-10 hidden w-full sm:block lg:mt-0">
+        {/* Tablet Img */}
         <img
-          className="mx-auto min-h-full max-w-full max-lg:max-w-[80%]"
-          src={technology?.images.png}
+          className="hidden min-h-full w-full max-lg:block"
+          src={technology?.images.landscape}
+          alt={technology?.name}
+          draggable={false}
+        />
+        {/* Desktop Img */}
+        <img
+          className="mx-auto hidden min-h-full w-full lg:block"
+          src={technology?.images.portrait}
           alt={technology?.name}
           draggable={false}
         />
