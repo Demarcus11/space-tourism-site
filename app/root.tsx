@@ -130,7 +130,7 @@ export default function App() {
           width="48"
           height="48"
         >
-          <g fill="none" fill-rule="evenodd">
+          <g fill="none" fillRule="evenodd">
             <circle cx="24" cy="24" r="24" fill="#FFF" />
             <path
               fill="#0B0D17"
@@ -158,7 +158,7 @@ export default function App() {
                     width="24"
                     height="21"
                   >
-                    <g fill="#D0D6F9" fill-rule="evenodd">
+                    <g fill="#D0D6F9" fillRule="evenodd">
                       <path d="M0 0h24v3H0zM0 9h24v3H0zM0 18h24v3H0z" />
                     </g>
                   </svg>
@@ -169,6 +169,8 @@ export default function App() {
                 className="border-0 bg-white/5 pt-8 pr-0 pl-12 text-white backdrop-blur-2xl data-[side=bottom]:border-t-0 data-[side=left]:border-r-0 data-[side=right]:border-l-0 data-[side=top]:border-b-0"
                 showCloseButton={false}
               >
+                <SheetTitle className="sr-only" />
+                <SheetDescription className="sr-only" />
                 <SheetClose asChild>
                   <button className="mr-8 mb-8 ml-auto aspect-square p-4">
                     <span className="sr-only">Close</span>
@@ -178,7 +180,7 @@ export default function App() {
                       width="20"
                       height="21"
                     >
-                      <g fill="#D0D6F9" fill-rule="evenodd">
+                      <g fill="#D0D6F9" fillRule="evenodd">
                         <path d="M2.575.954l16.97 16.97-2.12 2.122L.455 3.076z" />
                         <path d="M.454 17.925L17.424.955l2.122 2.12-16.97 16.97z" />
                       </g>
