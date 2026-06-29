@@ -158,7 +158,7 @@
   display: grid;
   column-gap: 2rem;
   place-items: center;
-  min-height: 100dvh;
+  min-height: 100vh;
 
   padding-inline: 2rem;
   padding-block-end: 4rem;
