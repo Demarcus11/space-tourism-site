@@ -139,7 +139,7 @@ export default function App() {
 
   return (
     <>
-      <div className={`min-h-screen ${backgroundClass}`}>
+      <div className={`min-h-dvh ${backgroundClass}`}>
         <header className="mx-8 flex items-center justify-between pt-8 sm:max-lg:mt-0 sm:max-lg:mr-0 lg:mr-0 lg:gap-4">
           <svg
             className="mr-10 w-14"
